@@ -9,18 +9,18 @@
 /* Begin PBXBuildFile section */
 		200B8DBFFAF3D53C93A9A74A /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904CE97E351FFF8FF7155990 /* Pods_Smack.framework */; };
 		3BD1A65B1FA3853600BFEFA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD1A65A1FA3853600BFEFA6 /* AppDelegate.swift */; };
-		3BD1A65D1FA3853600BFEFA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD1A65C1FA3853600BFEFA6 /* ViewController.swift */; };
 		3BD1A6601FA3853600BFEFA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BD1A65E1FA3853600BFEFA6 /* Main.storyboard */; };
 		3BD1A6621FA3853600BFEFA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BD1A6611FA3853600BFEFA6 /* Assets.xcassets */; };
 		3BD1A6651FA3853600BFEFA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BD1A6631FA3853600BFEFA6 /* LaunchScreen.storyboard */; };
 		3BD1A6701FA3C87800BFEFA6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD1A66E1FA3C87800BFEFA6 /* SWRevealViewController.m */; };
+		3BD1A6751FA3CB5600BFEFA6 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD1A6741FA3CB5600BFEFA6 /* ChatVC.swift */; };
+		3BD1A6771FA3CB6500BFEFA6 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD1A6761FA3CB6500BFEFA6 /* ChannelVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3174CF01DB7DDD58E7A657EC /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 		3BD1A6571FA3853600BFEFA6 /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD1A65A1FA3853600BFEFA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3BD1A65C1FA3853600BFEFA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3BD1A65F1FA3853600BFEFA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BD1A6611FA3853600BFEFA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BD1A6641FA3853600BFEFA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +28,8 @@
 		3BD1A66D1FA3C87700BFEFA6 /* Smack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack-Bridging-Header.h"; sourceTree = "<group>"; };
 		3BD1A66E1FA3C87800BFEFA6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../Smack Assets/SWReveal/SWRevealViewController.m"; sourceTree = "<group>"; };
 		3BD1A66F1FA3C87800BFEFA6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../Smack Assets/SWReveal/SWRevealViewController.h"; sourceTree = "<group>"; };
+		3BD1A6741FA3CB5600BFEFA6 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		3BD1A6761FA3CB6500BFEFA6 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		53EC23F2675D6612F4298D7A /* Pods-Smack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.release.xcconfig"; sourceTree = "<group>"; };
 		904CE97E351FFF8FF7155990 /* Pods_Smack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -65,9 +67,11 @@
 		3BD1A6591FA3853600BFEFA6 /* Smack */ = {
 			isa = PBXGroup;
 			children = (
+				3BD1A6711FA3CB1900BFEFA6 /* Model */,
+				3BD1A6731FA3CB2F00BFEFA6 /* View */,
+				3BD1A6721FA3CB2600BFEFA6 /* Controller */,
 				3BD1A66C1FA3C83200BFEFA6 /* Supporting Files */,
 				3BD1A65A1FA3853600BFEFA6 /* AppDelegate.swift */,
-				3BD1A65C1FA3853600BFEFA6 /* ViewController.swift */,
 				3BD1A65E1FA3853600BFEFA6 /* Main.storyboard */,
 				3BD1A6611FA3853600BFEFA6 /* Assets.xcassets */,
 				3BD1A6631FA3853600BFEFA6 /* LaunchScreen.storyboard */,
@@ -84,6 +88,29 @@
 				3BD1A66D1FA3C87700BFEFA6 /* Smack-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3BD1A6711FA3CB1900BFEFA6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3BD1A6721FA3CB2600BFEFA6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3BD1A6741FA3CB5600BFEFA6 /* ChatVC.swift */,
+				3BD1A6761FA3CB6500BFEFA6 /* ChannelVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3BD1A6731FA3CB2F00BFEFA6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6299582DC0BA15E26ECB52A8 /* Frameworks */ = {
@@ -227,7 +254,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BD1A65D1FA3853600BFEFA6 /* ViewController.swift in Sources */,
+				3BD1A6771FA3CB6500BFEFA6 /* ChannelVC.swift in Sources */,
+				3BD1A6751FA3CB5600BFEFA6 /* ChatVC.swift in Sources */,
 				3BD1A65B1FA3853600BFEFA6 /* AppDelegate.swift in Sources */,
 				3BD1A6701FA3C87800BFEFA6 /* SWRevealViewController.m in Sources */,
 			);
