@@ -47,15 +47,20 @@ class CreateAccountVC: UIViewController {
         }
     }
     
+ 
     @IBAction func pickAvatarPressed(_ sender: Any) {
+        performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
     }
+    
     
     @IBAction func pickBGColorPressed(_ sender: Any) {
     }
     
-    @IBAction func closePressed(_ sender: Any) {
+
+    @IBAction func closeBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: UNWIND, sender: nil)
     }
+    
     
     
 }
