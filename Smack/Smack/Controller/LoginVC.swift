@@ -12,7 +12,7 @@ class LoginVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyboardWhenTappedAround()
       
     }
 
@@ -22,5 +22,18 @@ class LoginVC: UIViewController {
     
     @IBAction func createAccntBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: TO_CREATE_ACCOUNT, sender: nil)
+    }
+}
+
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

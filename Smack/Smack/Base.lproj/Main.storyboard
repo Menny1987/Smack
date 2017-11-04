@@ -216,7 +216,7 @@
                                     <action selector="closePressed:" destination="yB3-Hg-WAs" eventType="touchUpInside" id="NNl-cu-OFk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvu-h5-Azn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvu-h5-Azn" customClass="RoundedButton" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="62" y="284" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -227,6 +227,11 @@
                                 <state key="normal" title="התחבר">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="q7L-Rw-Y6d">
                                 <rect key="frame" x="62" y="160" width="250" height="84"/>
@@ -408,7 +413,7 @@
                                     <constraint firstAttribute="width" constant="88" id="36S-3P-rhG"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPn-Uj-YGP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPn-Uj-YGP" customClass="RoundedButton" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="62" y="597" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -421,6 +426,14 @@
                                 <state key="normal" title="צור חשבון">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createAccntPressed:" destination="PY9-Ya-boy" eventType="touchUpInside" id="37d-cQ-Gdp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dR-6H-qk9">
                                 <rect key="frame" x="62" y="451" width="250" height="50"/>
@@ -434,6 +447,9 @@
                                 <state key="normal" title="בחר צבע רקע">
                                     <color key="titleColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="pickBGColorPressed:" destination="PY9-Ya-boy" eventType="touchUpInside" id="ttP-vA-0cs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IM-gS-1Nr">
                                 <rect key="frame" x="62" y="414" width="250" height="50"/>
@@ -447,6 +463,9 @@
                                 <state key="normal" title="בחר אווטאר">
                                     <color key="titleColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="pickAvtrPressed:" destination="PY9-Ya-boy" eventType="touchUpInside" id="e4h-h3-fOU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -469,6 +488,10 @@
                         <viewLayoutGuide key="safeArea" id="FMK-QQ-80T"/>
                     </view>
                     <connections>
+                        <outlet property="emailTxt" destination="Ftk-7B-SaE" id="vWj-Dx-ONV"/>
+                        <outlet property="passTxt" destination="d50-to-LwU" id="YHJ-Fe-HyF"/>
+                        <outlet property="userImg" destination="jhk-9h-2rT" id="xlC-Kx-6RO"/>
+                        <outlet property="usernameTxt" destination="G31-Ot-nHb" id="iqh-wE-UCI"/>
                         <segue destination="zH1-1a-l83" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="eG8-Sq-Wsy"/>
                     </connections>
                 </viewController>
