@@ -287,7 +287,7 @@
                                     <color key="titleColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="createAccntBtnPressed:" destination="yB3-Hg-WAs" eventType="touchUpInside" id="qH0-XO-8cP"/>
+                                    <action selector="createAccntBtnPressed:" destination="yB3-Hg-WAs" eventType="touchUpInside" id="XM5-G5-WRS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -322,15 +322,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="uy6-4s-VWf">
-                                <rect key="frame" x="137" y="313" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="3zC-Gq-D5W"/>
-                                    <constraint firstAttribute="height" constant="100" id="Xph-gb-ji3"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="eHI-KE-sah"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="fGR-Q9-Ji9"/>
-                                </constraints>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Nte-vC-AmG">
                                 <rect key="frame" x="122.5" y="80" width="130" height="40"/>
                                 <subviews>
@@ -445,6 +436,15 @@
                                     <action selector="pickBGColorPressed:" destination="PY9-Ya-boy" eventType="touchUpInside" id="ttP-vA-0cs"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="uy6-4s-VWf">
+                                <rect key="frame" x="137" y="313" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="3zC-Gq-D5W"/>
+                                    <constraint firstAttribute="height" constant="100" id="Xph-gb-ji3"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="eHI-KE-sah"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="fGR-Q9-Ji9"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXD-sw-V3w">
                                 <rect key="frame" x="137" y="313" width="100" height="130"/>
                                 <constraints>
@@ -460,12 +460,13 @@
                                     <action selector="pickAvatarPressed:" destination="PY9-Ya-boy" eventType="touchUpInside" id="rGF-yd-Jhf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vC-X0-bgM">
-                                <rect key="frame" x="315" y="28" width="28" height="28"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sez-aV-ZY7">
+                                <rect key="frame" x="331" y="28" width="28" height="28"/>
                                 <state key="normal" image="closeButton"/>
                                 <connections>
-                                    <action selector="closeBtnPressed:" destination="PY9-Ya-boy" eventType="touchUpInside" id="sPd-we-tx0"/>
-                                    <action selector="closePressed:" destination="yB3-Hg-WAs" eventType="touchUpInside" id="q3l-QS-s4h"/>
+                                    <action selector="closeBtnPressed:" destination="PY9-Ya-boy" eventType="touchUpInside" id="rKc-Bv-TSs"/>
+                                    <action selector="closeBtnPressed:" destination="zH1-1a-l83" eventType="touchUpInside" id="yC6-cP-CmL"/>
+                                    <action selector="closePressed:" destination="yB3-Hg-WAs" eventType="touchUpInside" id="j8i-Ls-FIF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -473,10 +474,9 @@
                         <constraints>
                             <constraint firstItem="dXD-sw-V3w" firstAttribute="top" secondItem="uy6-4s-VWf" secondAttribute="top" id="2PY-bJ-ihw"/>
                             <constraint firstItem="9dR-6H-qk9" firstAttribute="centerX" secondItem="BdT-tj-VCo" secondAttribute="centerX" id="HXt-cQ-Twl"/>
-                            <constraint firstItem="FMK-QQ-80T" firstAttribute="trailing" secondItem="6vC-X0-bgM" secondAttribute="trailing" constant="16" id="LIK-yW-zdg"/>
-                            <constraint firstItem="6vC-X0-bgM" firstAttribute="top" secondItem="FMK-QQ-80T" secondAttribute="top" constant="8" id="Tyu-JL-zVo"/>
                             <constraint firstItem="Nte-vC-AmG" firstAttribute="top" secondItem="FMK-QQ-80T" secondAttribute="top" constant="60" id="Z7l-nX-Xmt"/>
                             <constraint firstItem="jGl-FR-TF0" firstAttribute="centerX" secondItem="BdT-tj-VCo" secondAttribute="centerX" id="Z82-93-1a4"/>
+                            <constraint firstItem="sez-aV-ZY7" firstAttribute="top" secondItem="FMK-QQ-80T" secondAttribute="top" constant="8" id="aKm-f0-G8w"/>
                             <constraint firstItem="9dR-6H-qk9" firstAttribute="top" secondItem="uy6-4s-VWf" secondAttribute="bottom" constant="38" id="dUS-kh-r7I"/>
                             <constraint firstItem="Nte-vC-AmG" firstAttribute="centerX" secondItem="BdT-tj-VCo" secondAttribute="centerX" id="dkz-kF-g7I"/>
                             <constraint firstItem="jGl-FR-TF0" firstAttribute="top" secondItem="Nte-vC-AmG" secondAttribute="bottom" constant="40" id="k0b-af-IN5"/>
@@ -488,13 +488,14 @@
                             <constraint firstItem="uy6-4s-VWf" firstAttribute="centerX" secondItem="BdT-tj-VCo" secondAttribute="centerX" id="qNA-cz-nm0"/>
                             <constraint firstItem="sPn-Uj-YGP" firstAttribute="centerX" secondItem="BdT-tj-VCo" secondAttribute="centerX" id="sd7-Xd-fKM"/>
                             <constraint firstItem="dXD-sw-V3w" firstAttribute="width" secondItem="uy6-4s-VWf" secondAttribute="width" id="wBD-Jj-QXY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6vC-X0-bgM" secondAttribute="trailing" constant="16" id="zlr-hF-ZQT"/>
+                            <constraint firstItem="FMK-QQ-80T" firstAttribute="trailing" secondItem="sez-aV-ZY7" secondAttribute="trailing" constant="16" id="y6E-Tx-VPX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FMK-QQ-80T"/>
                     </view>
                     <connections>
                         <outlet property="emailTxt" destination="Ftk-7B-SaE" id="vWj-Dx-ONV"/>
                         <outlet property="passTxt" destination="d50-to-LwU" id="YHJ-Fe-HyF"/>
+                        <outlet property="userImg" destination="uy6-4s-VWf" id="mBD-nb-PGA"/>
                         <outlet property="usernameTxt" destination="G31-Ot-nHb" id="iqh-wE-UCI"/>
                         <segue destination="zH1-1a-l83" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="eG8-Sq-Wsy"/>
                         <segue destination="An5-sk-73V" kind="show" identifier="toAvatarPicker" id="fr1-NL-yYt"/>
