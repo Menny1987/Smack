@@ -59,7 +59,7 @@
                                 <rect key="frame" x="281" y="87" width="22" height="22"/>
                                 <state key="normal" image="addChannelButton"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="b6N-36-JCI" customClass="circleImage" customModule="Smack" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="b6N-36-JCI" customClass="circleImage" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="16" y="572" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="X6d-Ec-90o"/>
@@ -93,8 +93,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNN-pS-TIK">
-                                <rect key="frame" x="131" y="593" width="52" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNN-pS-TIK">
+                                <rect key="frame" x="111" y="593" width="52" height="33"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="התחבר">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -111,6 +111,7 @@
                             <constraint firstItem="KNN-pS-TIK" firstAttribute="leading" secondItem="b6N-36-JCI" secondAttribute="trailing" constant="20" id="8Ai-je-sx8"/>
                             <constraint firstItem="w5b-hR-keB" firstAttribute="trailing" secondItem="GuT-Io-32T" secondAttribute="trailing" constant="72" id="8LB-ne-vf1"/>
                             <constraint firstItem="KNN-pS-TIK" firstAttribute="centerY" secondItem="b6N-36-JCI" secondAttribute="centerY" id="BWl-fq-MbB"/>
+                            <constraint firstItem="b6N-36-JCI" firstAttribute="leading" secondItem="w5b-hR-keB" secondAttribute="leading" constant="16" id="DX9-fo-28s"/>
                             <constraint firstItem="b6N-36-JCI" firstAttribute="top" secondItem="ZRl-6D-t6D" secondAttribute="bottom" constant="20" id="Exp-fc-6C4"/>
                             <constraint firstItem="GuT-Io-32T" firstAttribute="centerY" secondItem="KZB-bz-iCh" secondAttribute="centerY" id="MRB-aW-eWZ"/>
                             <constraint firstItem="ZRl-6D-t6D" firstAttribute="trailing" secondItem="w5b-hR-keB" secondAttribute="trailing" id="O8W-K9-bo7"/>
@@ -119,11 +120,13 @@
                             <constraint firstItem="KZB-bz-iCh" firstAttribute="top" secondItem="Pw3-Ub-XXt" secondAttribute="bottom" constant="20" id="nb6-WS-rj6"/>
                             <constraint firstItem="Pw3-Ub-XXt" firstAttribute="leading" secondItem="w5b-hR-keB" secondAttribute="leading" constant="16" id="oU4-tR-bzJ"/>
                             <constraint firstItem="KZB-bz-iCh" firstAttribute="leading" secondItem="w5b-hR-keB" secondAttribute="leading" constant="16" id="p2L-bO-iaI"/>
+                            <constraint firstItem="w5b-hR-keB" firstAttribute="bottom" secondItem="b6N-36-JCI" secondAttribute="bottom" constant="20" id="xcR-It-QQo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w5b-hR-keB"/>
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="KNN-pS-TIK" id="nKr-ag-e6d"/>
+                        <outlet property="userimg" destination="b6N-36-JCI" id="QXd-A8-GWS"/>
                         <segue destination="yB3-Hg-WAs" kind="show" identifier="toLogin" id="04N-vg-stV"/>
                     </connections>
                 </viewController>
