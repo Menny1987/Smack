@@ -58,6 +58,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GuT-Io-32T">
                                 <rect key="frame" x="281" y="87" width="22" height="22"/>
                                 <state key="normal" image="addChannelButton"/>
+                                <connections>
+                                    <action selector="addChannelPressed:" destination="Z6Y-ey-lZO" eventType="touchUpInside" id="Fag-5G-ehg"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="b6N-36-JCI" customClass="circleImage" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="16" y="572" width="75" height="75"/>
@@ -70,7 +73,7 @@
                                 <rect key="frame" x="0.0" y="129" width="375" height="423"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="DnU-JS-MrI">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="channelCell" id="DnU-JS-MrI" customClass="ChannelCell" customModule="Smack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DnU-JS-MrI" id="oHZ-tE-NaW">
@@ -90,6 +93,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="channelName" destination="ZVO-Kd-Sg4" id="oUo-fh-fou"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -126,6 +132,7 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="KNN-pS-TIK" id="nKr-ag-e6d"/>
+                        <outlet property="tableView" destination="ZRl-6D-t6D" id="QqE-fj-7D6"/>
                         <outlet property="userimg" destination="b6N-36-JCI" id="QXd-A8-GWS"/>
                         <segue destination="yB3-Hg-WAs" kind="show" identifier="toLogin" id="04N-vg-stV"/>
                     </connections>
