@@ -190,7 +190,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LND-hy-0uC" customClass="rotateImage" customModule="Smack" customModuleProvider="target">
-                                <rect key="frame" x="7.367817964724388" y="631.8678179647244" width="30.264364070551224" height="30.26436407055121"/>
+                                <rect key="frame" x="6.867817964724388" y="631.8678179647244" width="30.264364070551224" height="30.26436407055121"/>
                                 <state key="normal" image="send"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="label_Rotation">
