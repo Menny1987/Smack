@@ -17,17 +17,12 @@ class AddChannelVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpView()
-        
-    }
-
-    @IBAction func closeBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        setupView()
     }
     
-    @IBAction func createChanPressed(_ sender: Any) {
-        guard let channelName = nameTxt.text , nameTxt.text != "" else{return}
-        guard let channelDesc = chanDesc.text else {return}
+    @IBAction func createChannelPressed(_ sender: Any) {
+        guard let channelName = nameTxt.text , nameTxt.text != "" else { return }
+        guard let channelDesc = chanDesc.text else { return }
         SocketService.instance.addChannel(channelName: channelName, channelDescription: channelDesc) { (success) in
             if success {
                 self.dismiss(animated: true, completion: nil)
@@ -35,17 +30,19 @@ class AddChannelVC: UIViewController {
         }
     }
     
-    func setUpView() {
-        nameTxt.attributedPlaceholder = NSAttributedString(string: "שם", attributes: [NSAttributedStringKey.foregroundColor : smackPurplePlaceholder])
-        
-        chanDesc.attributedPlaceholder = NSAttributedString(string: "תיאור", attributes: [NSAttributedStringKey.foregroundColor : smackPurplePlaceholder])
-        
-        let closeTouch = UITapGestureRecognizer(target: self, action: #selector(ProfileVC.closeTap(_:)))
+    @IBAction func closeModalPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func setupView() {
+        let closeTouch = UITapGestureRecognizer(target: self, action: #selector(AddChannelVC.closeTap(_:)))
         bgView.addGestureRecognizer(closeTouch)
+        
+        nameTxt.attributedPlaceholder = NSAttributedString(string: "name", attributes: [NSAttributedStringKey.foregroundColor : smackPurplePlaceholder])
+        chanDesc.attributedPlaceholder = NSAttributedString(string: "description", attributes: [NSAttributedStringKey.foregroundColor : smackPurplePlaceholder])
     }
     
     @objc func closeTap(_ recognizer: UITapGestureRecognizer) {
         dismiss(animated: true, completion: nil)
     }
-    
 }

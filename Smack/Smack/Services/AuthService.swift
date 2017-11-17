@@ -25,8 +25,6 @@ class AuthService {
         }
     }
     
-
-    
     var authToken: String {
         get {
             return defaults.value(forKey: TOKEN_KEY) as! String
@@ -101,7 +99,7 @@ class AuthService {
             "avatarName": avatarName,
             "avatarColor": avatarColor
         ]
-
+        
         Alamofire.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             
             if response.result.error == nil {
@@ -114,8 +112,10 @@ class AuthService {
                 debugPrint(response.result.error as Any)
             }
         }
-  }
+    }
+    
     func findUserByEmail(completion: @escaping CompletionHandler) {
+        
         Alamofire.request("\(URL_USER_BY_EMAIL)\(userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             
             if response.result.error == nil {
@@ -127,7 +127,6 @@ class AuthService {
                 completion(false)
                 debugPrint(response.result.error as Any)
             }
-            
         }
     }
     
@@ -141,7 +140,14 @@ class AuthService {
         
         UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
-
-
-

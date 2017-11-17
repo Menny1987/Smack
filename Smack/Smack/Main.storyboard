@@ -185,9 +185,12 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="messageBoxEditing:" destination="MTk-FN-KcY" eventType="editingChanged" id="7uk-Hk-lgc"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LND-hy-0uC" customClass="rotateImage" customModule="Smack" customModuleProvider="target">
-                                <rect key="frame" x="6.867817964724388" y="631.8678179647244" width="30.264364070551224" height="30.26436407055121"/>
+                                <rect key="frame" x="7.367817964724388" y="631.8678179647244" width="30.264364070551224" height="30.26436407055121"/>
                                 <state key="normal" image="send"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="label_Rotation">
@@ -282,6 +285,7 @@
                         <outlet property="channelNameLbl" destination="lHm-9B-XTx" id="Kjr-Z2-juB"/>
                         <outlet property="menuBtn" destination="aqv-e2-8Jv" id="Pxf-v4-XUO"/>
                         <outlet property="messageTxtBox" destination="hUX-Oc-KxH" id="dSO-Jb-YRW"/>
+                        <outlet property="sendBtn" destination="LND-hy-0uC" id="ZM8-R1-EZK"/>
                         <outlet property="tableView" destination="fIR-QN-Vyz" id="PoX-ri-uxR"/>
                     </connections>
                 </viewController>

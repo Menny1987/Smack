@@ -22,22 +22,20 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        self.revealViewController().rightViewRevealWidth = self.view.frame.size.width - 60
+        self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelsLoaded(_:)), name: NOTIF_CHANNELS_LOADED, object: nil)
         
         SocketService.instance.getChannel { (success) in
             if success {
                 self.tableView.reloadData()
+            }
         }
     }
-}
-
     
     override func viewDidAppear(_ animated: Bool) {
         setupUserInfo()
     }
-    
     
     @IBAction func addChannelPressed(_ sender: Any) {
         if AuthService.instance.isLoggedIn {
@@ -45,23 +43,16 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             addChannel.modalPresentationStyle = .custom
             present(addChannel, animated: true, completion: nil)
         }
-        
-            
-      
     }
     
     @IBAction func loginBtnPressed(_ sender: Any) {
         if AuthService.instance.isLoggedIn {
-        
             let profile = ProfileVC()
             profile.modalPresentationStyle = .custom
             present(profile, animated: true, completion: nil)
-            
         } else {
             performSegue(withIdentifier: TO_LOGIN, sender: nil)
         }
-        
-        performSegue(withIdentifier: TO_LOGIN, sender: nil)
     }
     
     @objc func userDataDidChange(_ notif: Notification) {
@@ -74,12 +65,11 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func setupUserInfo() {
         if AuthService.instance.isLoggedIn {
-            loginBtn.setTitle("\(UserDataService.instance.name)", for: .normal)
+            loginBtn.setTitle(UserDataService.instance.name, for: .normal)
             userimg.image = UIImage(named: UserDataService.instance.avatarName)
             userimg.backgroundColor = UserDataService.instance.returnUIColor(components: UserDataService.instance.avatarColor)
-            
         } else {
-            loginBtn.setTitle("התחבר", for: .normal)
+            loginBtn.setTitle("Login", for: .normal)
             userimg.image = UIImage(named: "menuProfileIcon")
             userimg.backgroundColor = UIColor.clear
             tableView.reloadData()
@@ -110,4 +100,16 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         NotificationCenter.default.post(name: NOTIF_CHANNEL_SELECTED, object: nil)
         self.revealViewController().revealToggle(animated: true)
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
