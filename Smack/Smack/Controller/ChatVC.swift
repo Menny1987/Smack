@@ -15,7 +15,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var messageTxtBox: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sendBtn: rotateImage!
-    
+    @IBOutlet weak var typingUsersLbl: UILabel!
     // Variables
     var isTyping = false
     
@@ -48,6 +48,29 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
         
+        SocketService.instance.getTypingUsers { (typingUsers) in
+            guard let channelId = MessageService.instance.selectedChannel?.id else {return}
+            var names = ""
+            var numberOfTypers = 0
+            
+            for (typingUser, channel) in typingUsers {
+                if typingUser != UserDataService.instance.name && channel == channelId {
+                    if names == "" {
+                        names = typingUser
+                    } else {
+                        names = "\(names), \(typingUser)"
+                    }
+                    numberOfTypers += 1
+                }
+            }
+            if numberOfTypers > 0 && AuthService.instance.isLoggedIn == true {
+            
+                self.typingUsersLbl.text = "\(names) מקליד.."
+            } else {
+                self.typingUsersLbl.text = ""
+            }
+        }
+        
         if AuthService.instance.isLoggedIn {
             AuthService.instance.findUserByEmail(completion: { (success) in
                 NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
@@ -59,7 +82,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if AuthService.instance.isLoggedIn {
             onLoginGetMessages()
         } else {
-            channelNameLbl.text = "Please Log In"
+            channelNameLbl.text = "אנא התחבר למערכת"
             tableView.reloadData()
         }
     }
@@ -79,12 +102,15 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func messageBoxEditing(_ sender: Any) {
+        guard let channelId = MessageService.instance.selectedChannel?.id else {return}
         if messageTxtBox.text == "" {
             isTyping = false
             sendBtn.isHidden = true
+            SocketService.instance.socket.emit("stopType", UserDataService.instance.name, channelId)
         } else {
             if isTyping == false {
                 sendBtn.isHidden = false
+                SocketService.instance.socket.emit("startType", UserDataService.instance.name, channelId)
             }
             isTyping = true
         }
@@ -99,6 +125,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 if success {
                     self.messageTxtBox.text = ""
                     self.messageTxtBox.resignFirstResponder()
+                    SocketService.instance.socket.emit("stopType", UserDataService.instance.name, channelId)
                 }
             })
         }
@@ -111,7 +138,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     MessageService.instance.selectedChannel = MessageService.instance.channels[0]
                     self.updateWithChannel()
                 } else {
-                    self.channelNameLbl.text = "No channels yet!"
+                    self.channelNameLbl.text = "לא נוספו קבוצות"
                 }
             }
         }
